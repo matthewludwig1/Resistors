@@ -18,63 +18,62 @@ public class Resistors {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String inputColour;
-        inputColour = JOptionPane.showInputDialog("What is your resistor colour code?" + "\n"
-        + "Seperate each colour with hyphens"); 
-        String [] resistorCode = {"Black", "Brown", "Red", "Orange", "Yellow", "Green", "Blue", 
-        "Violet", "Grey", "White"};
-         String [] inputText = inputColour.split("-");
-         int resistorValue = inputText.length;  // Will delete this
-         System.out.println(resistorValue);  // Prints out the number of colours
+         
+         int resistorValue = 0;
+         value(resistorValue);
     }
     
     /**
      *
-     * @param inputColour
+     * @param resistorValue
      * @param resistorCode
      * @return
      */
-    public int value (String[] resistorCode) {  //returns the digits of the resistor
-            int resistorValue = 0;
-            for (int i = 0; i < resistorCode.length; i++) {
-                if (resistorCode[i].equalsIgnoreCase("Black")) {
-                    resistorValue += 0;                                // might require resistorValue(i), for the 3 colours                                               
+    public static int value (int resistorValue) {  //returns the digits of the resistor
+        String inputColour = JOptionPane.showInputDialog("What is your resistor colour code?" + "\n"
+        + "Seperate each colour with hyphens"); 
+        String [] inputText = inputColour.split("-"); // seperates each colour
+        
+            for (int i = 0; i < 3; i++) {    // asigns a value for each colour
+                if (inputText[i].equalsIgnoreCase("Black")) {
+                    resistorValue = 0;                                                       
                 }
-                else if (resistorCode[i].equalsIgnoreCase("Brown")) {
-                    resistorValue += 1;
+                else if (inputText[i].equalsIgnoreCase("Brown")) {
+                    resistorValue = 1;
                 }
-                else if (resistorCode[i].equalsIgnoreCase("Red")) {
-                    resistorValue += 2;
+                else if (inputText[i].equalsIgnoreCase("Red")) {
+                    resistorValue = 2;
                 }
-                else if (resistorCode[i].equalsIgnoreCase("Orange")) {
-                    resistorValue += 3;
+                else if (inputText[i].equalsIgnoreCase("Orange")) {
+                    resistorValue = 3;
                 }
-                else if (resistorCode[i].equalsIgnoreCase("Yellow")) {
-                    resistorValue += 4;
+                else if (inputText[i].equalsIgnoreCase("Yellow")) {
+                    resistorValue = 4;
                 }
-                else if (resistorCode[i].equalsIgnoreCase("Green")) {
-                    resistorValue += 5;
+                else if (inputText[i].equalsIgnoreCase("Green")) {
+                    resistorValue = 5;
                 }
-                else if (resistorCode[i].equalsIgnoreCase("Blue")) {
-                    resistorValue += 6;
+                else if (inputText[i].equalsIgnoreCase("Blue")) {
+                    resistorValue = 6;
                 }
-                else if (resistorCode[i].equalsIgnoreCase("Violet") || resistorCode[i].equalsIgnoreCase
+                else if (inputText[i].equalsIgnoreCase("Violet") || inputText[i].equalsIgnoreCase
                 ("Purple")) {
-                    resistorValue += 7;
+                    resistorValue = 7;
                 }
-                else if (resistorCode[i].equalsIgnoreCase("Grey")) {
-                    resistorValue += 8;
+                else if (inputText[i].equalsIgnoreCase("Grey")) {
+                    resistorValue = 8;
                 }
-                else if (resistorCode[i].equalsIgnoreCase("White")) {
-                    resistorValue += 9;
+                else if (inputText[i].equalsIgnoreCase("White")) {
+                    resistorValue = 9;
                 }    
         }
-    return resistorValue;  
+     return resistorValue;
     }
     /*
-    public static int totalResistance() {
+    public static int totalResistance(int resistorValue) {
         
-    } */
+    } 
+*/
 }
 
 // Get the value of the first two resistance colours
