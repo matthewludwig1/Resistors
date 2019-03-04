@@ -34,9 +34,9 @@ public class Resistors {
         + "Seperate each colour with hyphens"); 
         String [] inputText = inputColour.split("-"); // seperates each colour
         
-            for (int i = 0; i < 3; i++) {    // asigns a value for each colour
+            for (int i = 0; i < 2; i++) {    // asigns a value for the first two colours
                 if (inputText[i].equalsIgnoreCase("Black")) {
-                    resistorValue = 0;                                                       
+                    resistorValue = 0;          // perhaps += to add a value to the first two elements                                       
                 }
                 else if (inputText[i].equalsIgnoreCase("Brown")) {
                     resistorValue = 1;
@@ -69,9 +69,11 @@ public class Resistors {
         }
      return resistorValue;
     }
-    /*
-    public static int totalResistance(int resistorValue) {
-        
+   /* 
+    public static int totalResistance(int resistorValue) {  // for the 3rd colour, and total resistance
+          
+      //  int resistance = (int) Math.pow(10,third colour value);
+       
     } 
 */
 }
